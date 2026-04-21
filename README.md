@@ -121,18 +121,57 @@ If you keep the supervisor in a foreground terminal instead, `Ctrl+C` performs t
 
 ## Demo with Screenshots
 
-The screenshots below are stored in `outputs/` and correspond to the required demo milestones.
+The screenshots below are stored in `outputs/` and are embedded inline so they render directly in the README.
 
-| Demo | Screenshot(s) | Caption |
-| --- | --- | --- |
-| Multi-container supervision | [01-multi-container-supervision-1.png](outputs/01-multi-container-supervision-1.png), [01-multi-container-supervision-2.png](outputs/01-multi-container-supervision-2.png) | One supervisor manages two live containers at the same time. |
-| Metadata tracking | [02-metadata-tracking.png](outputs/02-metadata-tracking.png) | `ps` shows container IDs, host PIDs, states, limits, nice values, and start times. |
-| Bounded-buffer logging | [03-bounded-buffer-logging.png](outputs/03-bounded-buffer-logging.png) | Container output is captured through the logging pipeline and persisted to per-container log files. |
-| CLI and IPC | [04-cli-ipc.png](outputs/04-cli-ipc.png) | A CLI command reaches the supervisor over the control channel and returns an explicit response. |
-| Soft-limit warning | [05-soft-limit-warning.png](outputs/05-soft-limit-warning.png) | `dmesg` shows a soft-limit warning without killing the container. |
-| Hard-limit enforcement | [06-hard-limit-enforcement.png](outputs/06-hard-limit-enforcement.png) | `dmesg` and container state show that the hard limit terminated the workload. |
-| Scheduling experiment | [07-scheduling-experiment.png](outputs/07-scheduling-experiment.png) | Two CPU-bound containers are run with different `nice` values for a scheduler comparison. |
-| Clean teardown | [08-clean-teardown.png](outputs/08-clean-teardown.png) | Shutdown completes cleanly with reaping, log flush, and module unload. |
+### Multi-container supervision
+
+![Supervisor managing multiple containers](outputs/01-multi-container-supervision-1.png)
+
+![Supervisor managing multiple containers, alternate view](outputs/01-multi-container-supervision-2.png)
+
+One supervisor manages two live containers at the same time.
+
+### Metadata tracking
+
+![Metadata tracking](outputs/02-metadata-tracking.png)
+
+`ps` shows container IDs, host PIDs, states, limits, nice values, and start times.
+
+### Bounded-buffer logging
+
+![Bounded-buffer logging](outputs/03-bounded-buffer-logging.png)
+
+Container output is captured through the logging pipeline and persisted to per-container log files.
+
+### CLI and IPC
+
+![CLI and IPC](outputs/04-cli-ipc.png)
+
+A CLI command reaches the supervisor over the control channel and returns an explicit response.
+
+### Soft-limit warning
+
+![Soft-limit warning](outputs/05-soft-limit-warning.png)
+
+`dmesg` shows a soft-limit warning without killing the container.
+
+### Hard-limit enforcement
+
+![Hard-limit enforcement](outputs/06-hard-limit-enforcement.png)
+
+`dmesg` and container state show that the hard limit terminated the workload.
+
+### Scheduling experiment
+
+![Scheduling experiment](outputs/07-scheduling-experiment.png)
+
+Two CPU-bound containers are run with different `nice` values for a scheduler comparison.
+
+### Clean teardown
+
+![Clean teardown](outputs/08-clean-teardown.png)
+
+Shutdown completes cleanly with reaping, log flush, and module unload.
 
 ## Engineering Analysis
 
